@@ -1,6 +1,6 @@
-## Nutrition Chatbot – Getting Started
+## Healthy Eating Chatbot – Getting Started
 
-This project is a simple terminal-based nutrition chatbot powered by OpenAI and LangChain.  
+This project is a simple terminal-based healthy eating chatbot powered by OpenAI and LangChain.  
 It lets you chat about healthy eating and see a quality **score** for each bot message.
 
 ### 1. Prerequisites

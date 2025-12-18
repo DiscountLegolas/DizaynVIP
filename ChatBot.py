@@ -17,7 +17,7 @@ class ChatResponse(BaseModel):
 
 
 
-system_prompt = """You are a friendly and knowledgeable nutrition enthusiast 
+system_prompt = """You are a friendly and knowledgeable healthy eating and nutrition enthusiast 
 who loves discussing healthy eating habits. You're having a casual conversation with someone 
 about their thoughts on healthy eating and nutrition. 
 
@@ -28,7 +28,7 @@ Your role:
 - Guide the conversation naturally toward topics like fruits & vegetables, hydration, 
   balanced meals, processed foods, and meal timing
 - Don't lecture or be preachy - keep it friendly and conversational
-- Respond naturally as if you're chatting with a friend about nutrition
+- Respond naturally as if you're chatting with a friend about healthy eating
 
 When you answer:
 - First, think step-by-step about the best, friendliest reply to the **user's input**.
@@ -52,7 +52,7 @@ agent = create_agent(
 def run_chat() -> None:
     thread_id = "1"
 
-    print("Nutrition Chatbot")
+    print("Healthy Eating Chatbot")
     print("Type 'quit' or 'exit' to end the conversation.\n")
 
     print("Bot: Hi! I'm your friendly nutrition chat companion.")
@@ -61,7 +61,7 @@ def run_chat() -> None:
         user_input = input("\nYou: ").strip()
 
         if user_input.lower() in {"quit", "exit", "q"}:
-            print("Bot: It was great chatting about nutrition with you. Take care!")
+            print("Bot: It was great chatting about Healthy Eating with you. Take care!")
             break
 
         if not user_input:
