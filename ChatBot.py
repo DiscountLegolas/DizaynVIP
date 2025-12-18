@@ -55,7 +55,7 @@ def run_chat() -> None:
     print("Healthy Eating Chatbot")
     print("Type 'quit' or 'exit' to end the conversation.\n")
 
-    print("Bot: Hi! I'm your friendly nutrition chat companion.")
+    print("Bot: Hi! I'm your friendly Healthy Eating chat companion.")
 
     while True:
         user_input = input("\nYou: ").strip()
