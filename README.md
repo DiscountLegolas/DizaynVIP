@@ -33,13 +33,13 @@ python ChatBot.py
 ```
 
 You should see:
-- A title `Nutrition Chatbot`
+- A title `Healthy Eating Chatbot`
 - A short introduction from the bot
 
 ### 5. How to talk to the bot and ask questions
 - Type your message after the `You:` prompt and press **Enter**.
 - Ask anything related to **healthy eating, nutrition, fruits & vegetables, hydration, balanced meals, processed foods, or meal timing**.
-- The bot will respond as a friendly nutrition enthusiast and you will see:
+- The bot will respond as a friendly healthy eating enthusiast and you will see:
   - **Bot:** the chatbot’s reply
   - **Score:** a number from 0–100 showing the quality score of that reply
 - To **exit**, type: `quit`, `exit`, or `q` and press **Enter**.
