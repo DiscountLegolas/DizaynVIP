@@ -188,24 +188,23 @@ def detect_keywords(text: str) -> Dict[str, Dict]:
             primary_matches = []
             related_matches = []
             
-            # Check primary keywords
+
             for keyword in keyword_data["primary"]:
                 if keyword.lower() in text_lower:
                     primary_matches.append(keyword)
             
-            # Check related keywords
+
             for keyword in keyword_data["related"]:
                 if keyword.lower() in text_lower:
                     related_matches.append(keyword)
             
-            # Calculate relevance score (0-1) based on matches
             relevance = 0.0
             if primary_matches:
                 relevance = 0.8 + (len(primary_matches) * 0.1)
             elif related_matches:
                 relevance = 0.5 + (len(related_matches) * 0.05)
             
-            relevance = min(relevance, 1.0)  # Cap at 1.0
+            relevance = min(relevance, 1.0) 
             
             results[category] = {
                 "primary_matches": primary_matches,
@@ -229,23 +228,19 @@ def evaluate_response( user_text: str, keyword_results: Dict) -> Tuple[int, Dict
     """
     total_score = 0
     breakdown = {}
-    
     for category, keyword_data in KEYWORDS.items():
         category_result = keyword_results[category]
         category_score = 0
         
         if category_result["mentioned"]:
-            # Base score for mentioning the topic
-            base_score = keyword_data["weight"] * 0.5  # 50% for mentioning
+            base_score = keyword_data["weight"] * 0.5  
             
-            # Bonus for primary keywords
+
             if category_result["primary_matches"]:
-                base_score = keyword_data["weight"] * 0.7  # 70% for primary keywords
+                base_score = keyword_data["weight"] * 0.7 
             
-            # Apply relevance multiplier
             category_score = base_score * category_result["relevance"]
             
-            # Bonus for context quality (check if user provides meaningful context)
             context_quality = _assess_context_quality(user_text, category)
             category_score += (keyword_data["weight"] * 0.3 * context_quality)
         

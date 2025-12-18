@@ -5,12 +5,14 @@ from langchain_openai import ChatOpenAI
 from Tool import score_message_tool
 from langgraph.checkpoint.memory import InMemorySaver    
 import os
+from dotenv import load_dotenv
+load_dotenv()
 class ChatResponse(BaseModel):
     """
     Structured response returned by the agent.
     """
-    message: str  # Natural language reply from the chatbot
-    score: float  # Numeric score (0–100) reflecting the quality of the response
+    message: str  
+    score: float 
 
 
 
@@ -29,11 +31,11 @@ Your role:
 - Respond naturally as if you're chatting with a friend about nutrition
 
 When you answer:
-- First, think step-by-step about the best, friendliest reply.
-- Then, use the `score_message` tool on your final reply text to get a score.
+- First, think step-by-step about the best, friendliest reply to the **user's input**.
+- Then, use the `score_message` tool on the **user's latest message** to get a score for their input.
 - Finally, fill the `ChatResponse` fields so that:
   - `message` is your final reply text.
-  - `score` is the numeric score (0–100) you inferred from the tool result.
+  - `score` is the numeric score (0–100) you inferred from the tool result for the **user's input**.
 
 Start the conversation by introducing yourself and asking about their thoughts on healthy eating."""
 API_KEY=os.getenv("OPENAI_TOKEN")
@@ -53,10 +55,8 @@ def run_chat() -> None:
     print("Nutrition Chatbot")
     print("Type 'quit' or 'exit' to end the conversation.\n")
 
-    # Static welcome message instead of an AI-generated introduction
     print("Bot: Hi! I'm your friendly nutrition chat companion.")
 
-    # Interactive loop
     while True:
         user_input = input("\nYou: ").strip()
 
