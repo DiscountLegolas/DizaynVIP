@@ -1,7 +1,7 @@
 ## Healthy Eating Chatbot – Getting Started
 
 This project is a simple terminal-based healthy eating chatbot powered by OpenAI and LangChain.  
-It lets you chat about healthy eating and see a quality **score** for each bot message.
+It lets you chat about healthy eating and see a quality **score** for each user message.
 
 ### 1. Prerequisites
 - **Python**: Make sure you have Python 3.9+ installed.
